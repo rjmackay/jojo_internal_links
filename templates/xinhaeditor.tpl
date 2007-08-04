@@ -27,13 +27,14 @@
                    'PasteText',
                    'ExtendedFileManager',
                    'TableOperations',
+                   'InsertAnchor',
 				   'Linker'
                   ];
 
         var res = Xinha.loadPlugins(xinha_plugins, xinha_init);
 
         /* Start Editors */
-        setTimeout("xinha_configure(); xinha_editors = Xinha.makeEditors(['xinha_editor_content'], xinha_config, xinha_plugins); Xinha.startEditors(xinha_editors);xinha_editors.xinha_editor_content.hidePanel( xinha_editors.xinha_editor_content._stylist );", 1000);
+        setTimeout("xinha_configure(); xinha_editors = Xinha.makeEditors(['xinha_editor_content'], xinha_config, xinha_plugins); Xinha.startEditors(xinha_editors);xinha_editors.xinha_editor_content.hidePanel( xinha_editors.xinha_editor_content._stylist );", {/literal}{$xinhatimeout|default:'1000'}{literal});
     }
 
     function xinha_configure()
@@ -63,7 +64,7 @@
             // define backend configuration for the plugin
             $IMConfig = array();
             $IMConfig['images_dir'] = _DOWNLOADDIR . '/images/';
-            $IMConfig['images_url'] = _SITEURL . '/images/default/images/';
+            $IMConfig['images_url'] = _SITEURL . '/downloads/images/';
             $IMConfig['files_dir'] = _DOWNLOADDIR . '/files/';
             $IMConfig['files_url'] = _SITEURL . '/downloads/files/';
             $IMConfig['thumbnail_prefix'] = 't_';
