@@ -2,6 +2,7 @@
 <script type="text/javascript">
     _editor_url  = '{/literal}{$SITEURL}{literal}/external/xinha/';
     _editor_lang = "en";
+    var xinhastarted= false;
 </script>
 <script type="text/javascript" src="{/literal}{$SITEURL}{literal}/external/xinha/XinhaCore.js"></script>
 <script type="text/javascript">
@@ -15,8 +16,8 @@
     // This contains the names of textareas we will make into Xinha editors
     function wysiwyg_init(field)
     {
-        $('xinha_wrapper').innerHTML = '<textarea class="content" style="padding:0; margin:0; width:780px; height:470px;" name="xinha_editor_content" id="xinha_editor_content">' + $(field).value +
-        '</textarea><input type="submit" class="jojo-admin-edit-done" value="Done" onclick="return hideWysiwygEditor(); "/><input type="submit" class="jojo-admin-edit-cancel" value="Cancel" onclick="$(\'wysiwyg-editor\').hide(); $(\'wysiwyg-editor-overlay\').hide(); return false;" />';
+        $('#xinha_wrapper').html('<textarea class="content" style="padding:0; margin:0; width:780px; height:470px;" name="xinha_editor_content" id="xinha_editor_content">' + $('#'+field).value +
+        '</textarea><input type="submit" class="jojo-admin-edit-done" value="Done" onclick="return hideWysiwygEditor(); "/><input type="submit" class="jojo-admin-edit-cancel" value="Cancel" onclick="$(\'#wysiwyg-editor\').hide(); $(\'#wysiwyg-editor-overlay\').hide(); return false;" />');
 
         /* Load plugins */
         xinha_plugins = xinha_plugins ? xinha_plugins :
@@ -35,6 +36,7 @@
 
         /* Start Editors */
         setTimeout("xinha_configure(); xinha_editors = Xinha.makeEditors(['xinha_editor_content'], xinha_config, xinha_plugins); Xinha.startEditors(xinha_editors);xinha_editors.xinha_editor_content.hidePanel( xinha_editors.xinha_editor_content._stylist );", {/literal}{$xinhatimeout|default:'1000'}{literal});
+        xinhastarted = true;
     }
 
     function xinha_configure()
@@ -95,8 +97,9 @@
 
     function wysiwyg_complete(field)
     {
-        $('xinha_wrapper').onsubmit();
-        $(field).value = $('xinha_editor_content').value;
+        //$('#xinha_wrapper').onsubmit();
+alert(field);
+        $('#'+field).val = $('#xinha_editor_content').val();
     }
   /* ]]> */
   </script>
