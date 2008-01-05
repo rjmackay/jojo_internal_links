@@ -30,7 +30,7 @@ if (count($data) == 0) {
 
 /* Add Google sitemap (sitemap.xml) page if one does not exist */
 /* $data = JOJO::selectQuery("SELECT * FROM page WHERE pg_link = 'xml_sitemap.php'");
-if ($NUMROWS == 0) {
+if (count($data) == 0) {
     echo "Adding <b>Google Sitemap</b> Page<br />";
     JOJO::insertQuery("INSERT INTO page SET pg_title = 'XML Sitemap', pg_link = 'xml_sitemap.php', pg_url = 'sitemap.xml', pg_parent=" . JOJO::cleanInt($_NOT_NO_MENU_ID) . ", pg_order=0, pg_mainnav='no', pg_body = ''");
 } */

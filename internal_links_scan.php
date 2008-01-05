@@ -23,7 +23,8 @@ class JOJO_Plugin_internal_links_scan extends JOJO_Plugin
 {
     function _getContent()
     {
-        global $smarty, $_USERGROUPS, $NUMROWS;
+        //global $smarty, $_USERGROUPS, $NUMROWS;
+		global $smarty, $_USERGROUPS;
 
         /*
           The $sitemap array holds all the various different sitemap trees.
