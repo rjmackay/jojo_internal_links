@@ -53,8 +53,9 @@ class JOJO_Plugin_internal_links_scan extends JOJO_Plugin
 
         /* Return the content */
         $content = array();
-        $content['content'] = $smarty->fetch('internal_links_scan.tpl');
-        return $content;
+        $content['content'] = $smarty->display('internal_links_scan.tpl');
+        exit();
+        //return $content;
     }
 
     /**
@@ -93,8 +94,6 @@ class JOJO_Plugin_internal_links_scan extends JOJO_Plugin
 function _page_sitemap($sitemap)
     {
         global $_USERGROUPS;
-        require_once('classes/hktree/hktree.class.php');
-
 
         $perms = new JOJO_Permissions();
         $pagetree = new hktree();
@@ -141,7 +140,6 @@ function _page_sitemap($sitemap)
      */
     function _article_sitemap($sitemap)
     {
-        require_once('classes/hktree/hktree.class.php');
 
         $limit = 15;
         $articlesperpage = 40;

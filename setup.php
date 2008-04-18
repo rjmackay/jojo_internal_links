@@ -20,7 +20,8 @@
 
 
 /* Add a Sitemap page is one does not exist */
-$data = JOJO::selectQuery("SELECT * FROM page WHERE pg_link='internal_links_scan.php'");
+Jojo::updateQuery("UPDATE page SET pg_link='JOJO_Plugin_internal_links_scan' WHERE pg_link='internal_links_scan.php'");
+$data = JOJO::selectQuery("SELECT * FROM page WHERE pg_link='JOJO_Plugin_internal_links_scan'");
 if (count($data) == 0) {
     echo "Adding <b>scan</b> Page to menu<br />";
 	$data = JOJO::selectQuery("SELECT * FROM page WHERE pg_title = 'Not on Menu'");
