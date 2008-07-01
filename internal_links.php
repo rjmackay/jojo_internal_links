@@ -1,18 +1,17 @@
 <?php
 /**
- * Jojo CMS - Empty Plugin
+ *                    Jojo CMS - Internal links plugin
+ *                ================
  *
- * Copyright 2007-2008 Jojo CMS
+ * Copyright 2007-2008 Robbie MacKay <rjmackay@gmail.com>
  *
  * See the enclosed file license.txt for license information (LGPL). If you
  * did not receive this file, see http://www.fsf.org/copyleft/lgpl.html.
  *
- * @author  Harvey Kane <code@ragepank.com>
- * @author  Michael Cochrane <mikec@jojocms.org>
- * @author  Melanie Schulz <mel@gardyneholt.co.nz>
+ * @author  Robbie MacKay <rjmackay@gmail.com>
  * @license http://www.fsf.org/copyleft/lgpl.html GNU Lesser General Public License
- * @link    http://www.jojocms.org JojoCMS
- * @package empty_plugin
+ * @link    http://rjmackay.wordpress.org/code/
+ * @package internal_links
  */
 
 /*
